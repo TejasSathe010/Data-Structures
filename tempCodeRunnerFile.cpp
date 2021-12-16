@@ -1,3 +1,2 @@
-s.push(10);
-    // s.push(20);
-    // s.push(30);
+decreaseKey(arr, heapSize, 0, 0);
+    printHeap(arr, heapSize);
