@@ -76,6 +76,13 @@ void insertValue(int arr[], int &heapSize, int value) {
     }
 }
 
+void heapSort(int arr[], int size) {
+     for(int i=size-1; i>=1; i--) {
+        swap(arr, 0, i);
+        maxHeapify(arr, size, 0);
+     }
+}
+
 void printHeap(int arr[], int size) {
     cout << "Array representation of Heap is:\n";
     for (int i = 0; i < size; ++i)
@@ -108,9 +115,17 @@ int main() {
     // decreaseKey(arr, heapSize, 6, 0);
     // printHeap(arr, heapSize);
 
-    insertValue(arr, heapSize, 200);
-    printHeap(arr, heapSize);
+    // insertValue(arr, heapSize, 200);
+    // printHeap(arr, heapSize);
 
-    decreaseKey(arr, heapSize, 0, 0);
-    printHeap(arr, heapSize);
+    // decreaseKey(arr, heapSize, 0, 0);
+    // printHeap(arr, heapSize);
+
+    int *sortArr = arr;
+    heapSort(sortArr, heapSize);
+
+    cout << "HeapSort: " << endl;
+    for(int i = 0; i < heapSize; i++) {
+        cout << sortArr[i] << " ";
+    }
 }
